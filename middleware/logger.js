@@ -3,8 +3,8 @@ const logger = (store) => (next) => (action) => {
 		console.log('the action:', action)
 		const returnValue = next(action)
 		console.log("The new state: ", store.getState())
-		return returnValue
 	console.groupEnd()
+	return returnValue
 } 
 
 export default logger
