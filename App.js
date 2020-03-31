@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+import { handleInitialData } from './actions/shared'
 
-function App() {
+const  App = (props) => {
+  useEffect(() => {
+  	props.dispatch(handleInitialData())
+  })
+
   return (
     <div className="App">
       Hello world
@@ -8,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);

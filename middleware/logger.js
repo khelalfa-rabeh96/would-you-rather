@@ -6,3 +6,5 @@ const logger = (store) => (next) => (action) => {
 		return returnValue
 	console.groupEnd()
 } 
+
+export default logger
