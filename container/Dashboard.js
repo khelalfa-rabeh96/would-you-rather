@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
+import Poll from './Poll'
 
 const Dashboard = (props) => {
 	const [currentCatg, setCurrentCatg] = useState('unanswred')
@@ -14,8 +15,8 @@ const Dashboard = (props) => {
 	return(
 		<div className="dashboard">
 			<h3>The Current List is : {currentCatg} </h3>
-			<ul>
-				{currentList.map(q => (<li>{q}</li>))}
+			<ul className="poll-list">
+				{currentList.map(q => (<Poll questionId={q} key={q}/>))}
 			</ul>
 
 			
