@@ -10,11 +10,11 @@ const  App = (props) => {
 
   return (
     <div className="App">
-	  { props.loading ?
-	  	null 
-	  	: 
-	  	<Dashboard  />
-	  }
+	  <div className="main-container">{ props.loading ?
+	  	  	null 
+	  	  	: 
+	  	  	<Dashboard  />
+	  	  }</div>
     </div>
   );
 }
