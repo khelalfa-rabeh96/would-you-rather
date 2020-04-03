@@ -1,23 +1,36 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import Poll from './Poll'
+import DashboardController from '../component/DashboardController'
 
 const Dashboard = (props) => {
 	const [currentCatg, setCurrentCatg] = useState('unanswred')
 	const [currentList, setCurrentList] = useState([])
 	const { answeredQstIds, unanswredQstIds } = props;
 
-	useEffect(() => {
+	const updateCurrentCatg = (catg) => {
+		setCurrentCatg(catg)
+	}
+
+	const updateCurrentList = (catg) => {
+		// The current list is depend on the question list catgegory
 		const list = currentCatg === 'unanswred' ? unanswredQstIds : answeredQstIds;
-		setCurrentList(list)	
+		setCurrentList(list)
+	}
+
+	useEffect(() => {
+		updateCurrentList(currentCatg)	
 	})
-	console.log('props: ', props)
+
+
 	return(
-		<div className="dashboard">
-			<h3>The Current List is : {currentCatg} </h3>
-			<ul className="poll-list">
-				{currentList.map(q => (<Poll questionId={q} key={q}/>))}
-			</ul>
+		<div className="dashboard main-border">
+			<DashboardController onChangeCatg={updateCurrentCatg} />
+			<div className="dashboard-body">
+			  <ul className="poll-list">
+					{currentList.map(q => (<Poll questionId={q} key={q}/>))}
+			  </ul>
+			</div>
 
 			
 		</div>
@@ -25,6 +38,8 @@ const Dashboard = (props) => {
 }
 
 function mapStateToProps({users, questions, authedUser }){
+	// exctract the question ids for both catgegories 
+	// Answred questions and Unanswred questions
 	const answeredQstIds =  Object.keys(users[authedUser].answers) 
 	const unanswredQstIds =  Object.keys(questions).filter(q => !answeredQstIds.includes(q));
 	
