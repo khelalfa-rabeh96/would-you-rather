@@ -1,4 +1,11 @@
 let users = {
+  rabah_khelalfa :{
+    id: 'rabah_khelalfa',
+    name : 'Rabah Khelalfa',
+    avatarURL: '',
+    answers: {},
+    questions: []
+  },
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
