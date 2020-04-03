@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,199 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul{
+  padding: 0;
+  margin:0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+.app{
+  width:100%;
+}
+
+.main-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.user-card .card-body{
+  
+} 
+
+.user-card .card-header{
+  font-size: 15px;
+  padding: 10px;
+} 
+
+
+.card-avatar,
+.card-info{
+  float: left;
+  padding: 0 10px;
+} 
+
+.card-avatar{
+  width:33%;
+  text-align: center;
+} 
+
+.card-avatar .big-avatar{
+   max-width:100%;
+   max-height: 100%
+} 
+
+.card-info{
+  width: 66%;
+  position: relative;
+}
+
+.card-info:before{
+  content: '';
+  position: absolute;
+  width: 1px;
+  left: 0;
+  top:10%;
+  height: 80%;
+  background-color: #dedede;
+}
+
+.card-info p:last-of-type{
+  color:#666;
+}
+
+/*----  Start Dashboard  ----*/
+.dashboard{
+  border-top-right-radius: 4px;
+  border-top-left-radius:4px; 
+}
+
+.dashboard .dashboard-controller{
+  border-bottom: 1px solid #dedede;
+}
+
+.dashboard .dashboard-controller .controller-tab{
+  float: left;
+  width: 50%;
+}  
+
+.dashboard .dashboard-controller .controller-tab a{
+  display: block;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-align: center;
+} 
+
+.dashboard .dashboard-controller .controller-tab a:hover{
+  color:#29aabf;
+} 
+
+.dashboard .dashboard-controller .controller-tab a.active{
+  background-color: #dedede;
+  color: #29aabf;
+} 
+
+.dashboard .dashboard-body{
+  padding: 20px;
+}
+
+.dashboard  .poll-list .user-card:not(:last-of-type){
+  margin-bottom: 15px;
+}
+
+.dashboard  .card-info .view-poll{
+  text-align: center;
+  border: 1px solid #29aabf;
+  width: 100%;
+  display: inline-block;
+  border-radius: 2px;
+  color: #29aabf;
+  font-size: 16px;
+  padding-top: 2px ;
+  padding-bottom: 2px ;
+}
+
+
+/*----Start Poll Question -----*/
+
+.poll-submit{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  background-color: #29aabf;
+  color: #fff;
+  border-radius:4px;
+  padding:5px 12px;
+  letter-spacing: 0.75px;
+  font-weight: bold
+}
+
+/*----Start Poll Results -----*/
+
+
+
+
+/*---- Resppnsive Design -----*/
+@media (max-width:539px ){
+    .main-container{
+      width:90%;
+    }
+    .dashboard ,
+    .dashboard .dashboard-controller .controller-tab a  {
+      font-size: 13px;
+    }
+   
+    .dashboard  .avatar{
+      height: 75px;
+      width: 75px;
+    } 
+    .user-card{ font-size: 13px }
+}
+
+@media (min-width:540px ){
+    .main-container{
+        width:70%;
+      }
+    .dashboard  .avatar{
+      height: 80px;
+      width: 80px;
+    } 
+}
+
+@media (min-width:768px){
+    .main-container{
+      width:50%;
+    }
+
+    .dashboard  .avatar{
+      height: 100px;
+      width: 100px;
+    }
+}
+
+
+/*----- general style  -----*/
+.main-border{
+  border:1px solid #dedede;
+}
+
+.main-color{
+  color: #454545 ;
+  font-weight: bold
 }
