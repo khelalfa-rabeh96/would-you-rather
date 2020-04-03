@@ -103,22 +103,22 @@ img{
 }
 
 .dashboard .dashboard-controller .controller-tab{
-  float: left;
-  width: 50%;
-}  
-
-.dashboard .dashboard-controller .controller-tab a{
-  display: block;
+  display: inline-block;  
   padding: 8px 16px;
   font-size: 14px;
   text-align: center;
-} 
+  width: 50%;
+  border:none;
+  background-color: #fff
+}  
 
-.dashboard .dashboard-controller .controller-tab a:hover{
+ 
+
+.dashboard .dashboard-controller .controller-tab:hover{
   color:#29aabf;
 } 
 
-.dashboard .dashboard-controller .controller-tab a.active{
+.dashboard .dashboard-controller .controller-tab.active{
   background-color: #dedede;
   color: #29aabf;
 } 
