@@ -227,6 +227,53 @@ img{
  margin-top: 5px;
 }
 
+/*---- Start New Poll -----*/
+.new-poll h1{
+  border-bottom: 1px solid #dedede;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: #fafafa;
+  font-weight: bold
+}
+
+.new-poll-container{
+  padding: 10px;
+}
+.new-poll-container p.h5{
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.new-poll-container .seperator{
+  margin:20px 0;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+}
+
+.new-poll-container .seperator:after,
+.new-poll-container .seperator:before{
+  content: '';
+  position: absolute;
+  width:43%;
+  height: 1px;
+  background-color: #dedede;
+  top:50%;
+}
+
+.new-poll-container .seperator:after{
+  left:0;
+}
+.new-poll-container .seperator:before{
+  right: 0;
+}
+.new-poll-container input[type="submit"]{
+  margin-top: 20px;
+  background-color: #29aabf;
+  color: #fff;
+  font-weight: bold;
+  border-color: #29aabf;
+}
 
 
 /*---- Resppnsive Design -----*/
