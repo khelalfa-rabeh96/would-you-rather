@@ -161,6 +161,71 @@ img{
 
 /*----Start Poll Results -----*/
 
+.option{
+  border:1px solid #dedede;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.option .option-container{
+}
+
+.option.win:before{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top:0;
+   left: 0;
+   background-color: #29aabf;
+   opacity: .15;
+   z-index: -1;
+   
+}
+
+.option.win:after{
+   content: 'you win';
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   top:-25px;
+   right: -25px;
+   background-color: #e6bd26;
+   padding: 10px;
+   border-radius: 50%;
+   text-align: center;
+   line-height: 1.2;
+   z-index: 2;
+   font-size: 14px;
+   font-weight: bold;
+   color: #fff;
+   display: block;
+}
+
+.option.win p{
+  color: #29aabf;
+}
+
+.option p{
+ font-size: 15px;
+ font-weight: bold;
+}
+
+.option .progress-bar{
+ font-size: 15px;
+ font-weight: bold;
+ background-color: #29aabf;
+}
+
+.option span{
+ font-size: 13px;
+ display: block;
+ text-align: center;
+ font-weight: bold;
+ margin-top: 5px;
+}
 
 
 
