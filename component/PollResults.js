@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import OptionResults from './OptionResults';
+import OptionResults from '../container/OptionResults';
 
 const PollResutls = (props) => {
 	const { author , questionId} = props
