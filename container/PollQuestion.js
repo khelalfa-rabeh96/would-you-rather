@@ -1,25 +1,33 @@
 import React, {useState} from 'react';
 import {connect}  from 'react-redux';
 import PropTypes from 'prop-types'
-
+import { handleSaveQuestionAnswer } from '../actions/questions'
 
 const PollQuestion = (props) => {
 	
-	const {author, question} = props
-	const optionOne = question.optionOne.text;
-	const optionTwo = question.optionTwo.text;
+	const {author, 
+			question,
+			questionId,
+			authedUser,
+			dispatch
+		} = props
 
-	const [selectedOption, setSelectedOption] = useState(optionOne);
+	const [selectedOption, setSelectedOption] = useState("optionOne");
 
 	const handleChange = (e) => {
-		console.log(e.target.value)
 		setSelectedOption(e.target.value)
 	}
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// Todo: handle the submit
-		// Add save question answer
-		// display the poll results
+		dispatch(handleSaveQuestionAnswer({
+					authedUser,
+					qid:questionId,
+					answer:selectedOption
+				}))
+		console.log(selectedOption)
+		
+
+
 	}
 
 	return(
@@ -39,19 +47,19 @@ const PollQuestion = (props) => {
 				  	  	<div>
 				  	  	  <input type="radio" 
 			  	  	  			 id="opt-one" 
-			  	  	  			 value={optionOne} 
-			  	  	  			 checked={selectedOption === optionOne}
+			  	  	  			 value={"optionOne"} 
+			  	  	  			 checked={selectedOption === "optionOne"}
 			  	  	  			 onChange={handleChange}/>
-				  	  	  <label htmlFor="opt-one">{optionOne}</label>			
+				  	  	  <label htmlFor="opt-one">{question.optionOne.text}</label>			
 				  	  	</div>
 
 				  	  	<div>
 				  	  	  <input type="radio" 
 				  	  	  		id="opt-two" 
-				  	  	  		value={optionTwo} 
-				  	  	  		checked={selectedOption === optionTwo}
+				  	  	  		value={"optionTwo"} 
+				  	  	  		checked={selectedOption === "optionTwo"}
 			  	  	  			onChange={handleChange}/>
-				  	  	  <label htmlFor="opt-two">{optionTwo}</label>			
+				  	  	  <label htmlFor="opt-two">{question.optionTwo.text}</label>			
 				  	  	</div>
 						<input type="submit" value="Submit" className="poll-submit" />
 				  	  </form>
@@ -73,7 +81,9 @@ function mapStateToProps({users, authedUser, questions},{questionId}){
 	const question = questions[questionId]
 
 	return {
-		question
+		question,
+		authedUser,
+		questionId
 	}
 }
 
