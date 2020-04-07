@@ -16,7 +16,7 @@ export default function questions(state = {}, action){
 				...state[qid],
 				[answer]:{
 					...state[qid][answer],
-					votes :state[qid][answer].votes.conact(authedUser)
+					votes :state[qid][answer].votes.concat(authedUser)
 				}
 			}
 		}
