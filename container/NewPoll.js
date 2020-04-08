@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import {handleSaveQuestion} from '../actions/questions'
 
 const NewPoll = (props) => {
 	const [optionOne, setOptionOne] = useState('')
 	const [optionTwo, setOptionTwo] = useState('')
 	
 	const handleSubmit = (e) => {
+		const { authedUser, dispatch } = props;
 		e.preventDefault();
-		console.log('optionOne: '+ optionOne);
-		console.log('optionTwo: '+ optionTwo);
+		dispatch(handleSaveQuestion({
+			optionOneText:optionOne,
+			optionTwoText: optionTwo,
+			authedUser,
+		}))
+		
 	}
 	return(
 		 <div className="new-poll main-border">
@@ -49,7 +56,13 @@ const NewPoll = (props) => {
 		)
 }
 
-NewPoll.propTypes = {
-
+function mapStateToProps({authedUser}){
+	return {
+		authedUser
+	}
 }
-export default NewPoll;
+
+NewPoll.propTypes = {
+	authedUser: PropTypes.string.isRequired
+}
+export default connect(mapStateToProps)(NewPoll);
