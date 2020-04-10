@@ -6,7 +6,6 @@ import OptionResults from '../container/OptionResults';
 const PollResutls = (props) => {
 	const { author , questionId} = props
 	return(
-		<div className="mai.container">
 	      <div className="poll-results">
 	      	 <div className="user-card main-border">
 				<h5 className="card-header main-color">{author.name} asks:</h5>
@@ -27,7 +26,6 @@ const PollResutls = (props) => {
 				</div>
 			  </div>
 	      </div>
-		</div>
 		)
 }
 
