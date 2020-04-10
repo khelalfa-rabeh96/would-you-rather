@@ -4,7 +4,7 @@ const LeaderCard = (props) => {
 	const { leader, order } = props;
 	let svgClassName;
 
-	// To defin the award color (gold,.. etc)
+	// Defin the award color (gold,.. etc)
 	switch(order){
 		case 1:
 			svgClassName = 'bi bi-award first';
