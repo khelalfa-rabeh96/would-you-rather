@@ -47,6 +47,6 @@ function mapStateToProps({authedUser, users}){
 
 App.propTypes = {
 	loading: PropTypes.bool.isRequired,
-	authedUser: PropTypes.object.isRequired
+	authedUser: PropTypes.object
 }
 export default connect(mapStateToProps)(App);

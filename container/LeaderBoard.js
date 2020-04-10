@@ -5,7 +5,7 @@ import LeaderCard from '../component/LeaderCard'
 
 const LeaderBoard = (props) => {
 	return(
-		<div class="leader-board">
+		<div className="leader-board">
 			<ul className="leader-board">
 				{props.leaders.map((l, index) => (
 					<LeaderCard leader={l} order={index+1} key={l.id}/>

@@ -26,7 +26,7 @@ const NavBar = (props) => {
 			  	</li>
 
 			  	<li  className="nav-list-item">
-			  		<Link to="/login" exact  className="nav-link">
+			  		<Link to="/login"   className="nav-link">
 			  		  Logout
 			  		</Link>
 			  	</li>
