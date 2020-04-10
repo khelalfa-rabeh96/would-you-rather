@@ -12,7 +12,7 @@ const PollDetail = (props) => {
 	// Than return the resultes  of that poll
 	// Else return the form to submit his answer
 	return(
-		<div className="dashboard-detail">
+		<div className="poll-detail">
 			{ pollStatus === 'answred' ?
 			  <PollResults questionId={questionId} author={author}/>
 			  :
@@ -23,7 +23,8 @@ const PollDetail = (props) => {
 		)
 }
 
-function mapStateToProps({authedUser, users,questions}, {questionId}){
+function mapStateToProps({authedUser, users,questions}, props){
+	const { questionId } = props.match.params
 	const aUser = users[authedUser];
 	const question = questions[questionId];
 	const author = users[question.author];

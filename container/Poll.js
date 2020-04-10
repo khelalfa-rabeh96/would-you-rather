@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { Link } from 'react-router-dom'
 const Poll = (props) => {
 	const {author, question} = props
 	return(
@@ -14,7 +14,7 @@ const Poll = (props) => {
 			  <div className="card-info">
 			  	<p className="main-color">Would you rather</p>
 			  	<p>...{question.optionOne.text.substr(0,17)}..</p>
-			  	<a href="#" className="view-poll">View Poll</a>
+			  	<Link to={`/questions/${question.id}`} className="view-poll">View Poll</Link>
 			  </div>	
 			  <div className="clearfix"></div>
 			</div>
