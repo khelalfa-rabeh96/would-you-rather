@@ -1,37 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
+import LeaderCard from '../component/LeaderCard'
 
 const LeaderBoard = (props) => {
 	return(
-		<ul className="leader-board">
-		{props.leaders.map(l => (
-			<li key={l.id} 
-				style={{
-					padding:5+"px",
-					border:"1px solid #dedede", 
-					marginBottom: 10+"px"
-				}}>
-
-			  <p>user name: {l.name}</p>
-			  <p>user score: {l.score}</p>
-			</li>
-
-			))}
-		</ul>
+		<div class="leader-board">
+			<ul className="leader-board">
+				{props.leaders.map((l, index) => (
+					<LeaderCard leader={l} order={index+1} key={l.id}/>
+				))}
+			</ul>
+		</div>
 	)
 }
 
 function mapStateToProps({users}){
 
 	// return a list of user and his score
-	const usersScore = Object.values(users).map(user => {
+	const usersScore = Object.values(users).map((user) => {
 		const createdQuestions = user.questions.length;
 		const answeredQuestions = Object.keys(user.answers).length;
 		const score = createdQuestions + answeredQuestions;
 
+		// each user has the neccessar info 
+		// that need to be displayed in the leader card
 		return {
-			avatarUrl: user.avatarUrl,
+			id: user.id,
+			avatarURL: user.avatarURL,
 			name:user.name,
 			createdQuestions,
 			answeredQuestions,

@@ -398,6 +398,10 @@ img{
   left: 2px;
 }
 
+.leader-board .user-card .award svg.first{
+  fill: gold;
+}
+
 .leader-board .user-card .award svg.second{
   fill: skyblue;
 }
