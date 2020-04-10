@@ -10,7 +10,7 @@ const OptionResults = (props) => {
 	const allVotes = question.optionOne.votes.length + question.optionTwo.votes.length
 	// Number who votes on the current option
 	const optionVotes = question[option].votes.length;
-	const persentage = (optionVotes * 100) / allVotes 
+	const persentage = Math.round((optionVotes * 100) / allVotes) 
 	
 	// Check if this option's votes include authed user
 	const authedUserIncluded = question[option].votes.includes(authedUser) 
