@@ -48,7 +48,9 @@ img{
 }
 
 .user-card .card-body{
-  
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 } 
 
 .user-card .card-header{
@@ -58,8 +60,8 @@ img{
 
 
 .card-avatar,
-.card-info{
-  float: left;
+.card-info,
+.score-info{
   padding: 0 10px;
 } 
 
@@ -75,19 +77,35 @@ img{
 
 .card-info{
   width: 66%;
+}
+
+.card-info,
+.score-info{
   position: relative;
 }
 
-.card-info:before{
+.card-info:before,
+.card-info:after,
+.score-info:before,
+.score-info:after{
   content: '';
   position: absolute;
   width: 1px;
-  left: 0;
   top:5%;
   height: 90%;
   background-color: #dedede;
 }
 
+
+
+.card-info:before,
+.score-info:before{
+  left:0;
+}
+
+.score-info:after{
+  right:0;
+}
 .card-info p:last-of-type{
   color:#666;
 }
@@ -103,22 +121,22 @@ img{
 }
 
 .dashboard .dashboard-controller .controller-tab{
-  display: inline-block;  
+  float: left;
+  width: 50%;
+}  
+
+.dashboard .dashboard-controller .controller-tab a{
+  display: block;
   padding: 8px 16px;
   font-size: 14px;
   text-align: center;
-  width: 50%;
-  border:none;
-  background-color: #fff
-}  
+} 
 
- 
-
-.dashboard .dashboard-controller .controller-tab:hover{
+.dashboard .dashboard-controller .controller-tab a:hover{
   color:#29aabf;
 } 
 
-.dashboard .dashboard-controller .controller-tab.active{
+.dashboard .dashboard-controller .controller-tab a.active{
   background-color: #dedede;
   color: #29aabf;
 } 
@@ -172,7 +190,7 @@ img{
 .option .option-container{
 }
 
-.option.my-vote:before{
+.option.win:before{
    content: '';
    position: absolute;
    width: 100%;
@@ -185,8 +203,8 @@ img{
    
 }
 
-.option.my-vote:after{
-   content: 'you vote';
+.option.win:after{
+   content: 'you win';
    position: absolute;
    width: 50px;
    height: 50px;
@@ -204,7 +222,7 @@ img{
    display: block;
 }
 
-.option.my-vote p{
+.option.win p{
   color: #29aabf;
 }
 
@@ -274,6 +292,76 @@ img{
   font-weight: bold;
   border-color: #29aabf;
 }
+
+/*--- Start Leader Board ----*/
+.leader-board .user-card {position: relative; margin-bottom: 10px;}
+.leader-board .user-card .card-avatar{width:24%;}
+.leader-board .user-card .score-info{width:52%;}
+.leader-board .score-info .leader-name{
+  font-weight: bold;
+  font-size:17px;
+  margin-bottom: 20px;
+}
+
+.leader-board .score-info span{
+  font-size:14px;
+  color: #555;
+}
+
+.leader-board .score-info span:first-of-type{float:left;}
+.leader-board .score-info span:last-of-type{float:right;}
+.leader-board .score-info hr{
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+.leader-board .user-card .total-score{
+  width:18%;
+}
+.leader-board .user-card .total-score h6{
+  padding: 8px;
+  background-color: #efefef;
+  margin:0;
+}
+
+.leader-board .user-card .total-score div{
+  padding: 10px 0;
+}
+
+.leader-board .user-card .total-score .total-score-count{
+  width:35px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: #29aabf;
+  color: #fff;
+  line-height: 35px;
+
+}
+
+.leader-board .user-card .triangle{
+  position: absolute;
+  top:0;
+  left:0;
+  width:0;
+  height: 0;
+  border-width: 25px;
+  border-style:solid;
+  border-top-color: #dedede;
+  border-left-color: #dedede;
+  border-bottom-color: transparent; 
+  border-right-color: transparent; 
+}
+
+.leader-board .user-card .award {
+  position: absolute;
+  top:2px;
+  left: 2px;
+}
+
+.leader-board .user-card .award svg.second{
+  fill: skyblue;
+}
+
 
 
 /*---- Resppnsive Design -----*/
