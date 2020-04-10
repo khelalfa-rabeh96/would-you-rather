@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import {handleSaveQuestion} from '../actions/questions'
 
 const NewPoll = (props) => {
 	const [optionOne, setOptionOne] = useState('')
 	const [optionTwo, setOptionTwo] = useState('')
-	
+	const [toHome, setToHome] = useState(false)
+
 	const handleSubmit = (e) => {
 		const { authedUser, dispatch } = props;
 		e.preventDefault();
@@ -15,7 +17,12 @@ const NewPoll = (props) => {
 			optionTwoText: optionTwo,
 			authedUser,
 		}))
+
+		setToHome(true)
 		
+	}
+	if(toHome === true){
+			return <Redirect to="/"/>
 	}
 	return(
 		 <div className="new-poll main-border">
