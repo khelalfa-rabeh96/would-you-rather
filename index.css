@@ -85,7 +85,6 @@ img{
 }
 
 .card-info:before,
-.card-info:after,
 .score-info:before,
 .score-info:after{
   content: '';
@@ -163,20 +162,19 @@ img{
 .dashboard .dashboard-controller .controller-tab{
   float: left;
   width: 50%;
-}  
-
-.dashboard .dashboard-controller .controller-tab a{
   display: block;
   padding: 8px 16px;
   font-size: 14px;
   text-align: center;
-} 
+  border:none;
+  background-color: #fff
+}  
 
-.dashboard .dashboard-controller .controller-tab a:hover{
+.dashboard .dashboard-controller .controller-tab:hover{
   color:#29aabf;
 } 
 
-.dashboard .dashboard-controller .controller-tab a.active{
+.dashboard .dashboard-controller .controller-tab.active{
   background-color: #dedede;
   color: #29aabf;
 } 
@@ -217,6 +215,10 @@ img{
   font-weight: bold
 }
 
+.poll-question label{
+  margin-left: 10px;
+}
+
 /*----Start Poll Results -----*/
 
 .option{
@@ -230,7 +232,7 @@ img{
 .option .option-container{
 }
 
-.option.win:before{
+.option.my-vote:before{
    content: '';
    position: absolute;
    width: 100%;
@@ -243,8 +245,8 @@ img{
    
 }
 
-.option.win:after{
-   content: 'you win';
+.option.my-vote:after{
+   content: 'your vote';
    position: absolute;
    width: 50px;
    height: 50px;
@@ -262,7 +264,7 @@ img{
    display: block;
 }
 
-.option.win p{
+.option.my-vote p{
   color: #29aabf;
 }
 
