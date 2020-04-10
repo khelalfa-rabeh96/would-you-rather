@@ -12,15 +12,17 @@ const NewPoll = (props) => {
 	const handleSubmit = (e) => {
 		const { authedUser, dispatch } = props;
 		e.preventDefault();
-		dispatch(handleSaveQuestion({
-			optionOneText:optionOne,
-			optionTwoText: optionTwo,
-			authedUser,
-		}))
-
-		setToHome(true)
-		
+		// Check if the fields are not empty before you submit
+		if(optionOne.trim() && optionTwo.trim()){
+			dispatch(handleSaveQuestion({
+				optionOneText:optionOne,
+				optionTwoText: optionTwo,
+				authedUser,
+			}))
+			setToHome(true);
+		}	
 	}
+
 	if(toHome === true){
 			return <Redirect to="/"/>
 	}
