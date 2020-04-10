@@ -110,6 +110,46 @@ img{
   color:#666;
 }
 
+/*---- Start NavBar -----*/
+.navbar{
+  border-bottom: 2px solid #29aabf;
+  padding-bottom:  0
+}
+
+.navbar .navbar-container{
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar .nav-list-item{
+  float:left;
+  margin-right: 10px;
+}
+
+.navbar .nav-list-item:last-of-type,
+.navbar .nav-list-item:nth-of-type(4){
+  float:right;
+}
+
+.navbar .nav-list-item img{
+  width:20px;
+  margin-left: 5px;
+}
+
+.navbar .nav-list-item .nav-link{
+    color: #656565;
+    font-size: 16px
+}
+
+.navbar .nav-list-item .nav-link.active{
+    background-color: #29aabf;
+    color: #fff;
+    border-top-right-radius: 30px;
+    border-top-left-radius:30px; 
+}
+
+
 /*----  Start Dashboard  ----*/
 .dashboard{
   border-top-right-radius: 4px;
@@ -379,6 +419,24 @@ img{
       width: 75px;
     } 
     .user-card{ font-size: 13px }
+
+    .navbar .navbar-container{
+      width: 95%;  
+    }
+    
+    .navbar .nav-list-item {
+      margin-right: 5px;
+    }
+
+    .navbar .nav-list-item .nav-link{
+      padding: .25rem .5rem;
+      font-size: 14px;
+    }
+
+    .navbar .nav-list-item .nav-link.active{
+      border-top-right-radius: 25px;
+      border-top-left-radius: 25px;
+    }
 }
 
 @media (min-width:540px ){
@@ -389,6 +447,24 @@ img{
       height: 80px;
       width: 80px;
     } 
+
+    .navbar .navbar-container{
+      width: 90%;  
+    }
+    
+    .navbar .nav-list-item {
+      margin-right: 5px;
+    }
+
+    .navbar .nav-list-item .nav-link{
+      padding: .25rem .5rem;
+      font-size: 14px;
+    }
+
+    .navbar .nav-list-item .nav-link.active{
+      border-top-right-radius: 25px;
+      border-top-left-radius: 25px;
+    }
 }
 
 @media (min-width:768px){
@@ -399,6 +475,37 @@ img{
     .dashboard  .avatar{
       height: 100px;
       width: 100px;
+    }
+
+    .navbar .navbar-container{
+      width: 80%;  
+    }
+
+    .navbar .nav-list-item {
+      margin-right: 10px;
+    }
+
+    .navbar .nav-list-item .nav-link{
+      padding: .3rem .6rem;
+      font-size: 15px;
+    }
+
+    
+}
+
+@media (min-width:922px){
+    .navbar .navbar-container{
+      width: 75%;
+      
+    }
+    .navbar .nav-list-item .nav-link{
+      font-size: 16px;
+    }
+
+     .navbar .nav-list-item .nav-link.active{
+      border-top-right-radius: 30px;
+      border-top-left-radius: 30px;
+
     }
 }
 
