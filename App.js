@@ -8,8 +8,11 @@ import Dashboard from './container/Dashboard'
 import PollDetail from './container/PollDetail'
 import NewPoll from './container/NewPoll'
 import LeaderBoard from './container/LeaderBoard'
-import NavBar from './component/NavBar'
+import NavBar from './container/NavBar'
+import Login from './container/Login'
+
 const  App = (props) => {
+
   useEffect(() => {
   	props.dispatch(handleInitialData())
   })
@@ -18,18 +21,18 @@ const  App = (props) => {
    <Router> 
    <div className="App">
    		{ props.loading ?
-   	  	  	null 
-   	  	  	:  	  	  
-   	  	  	<Fragment> 
-   	  	  		 <NavBar authedUser={props.authedUser}/>
-  	   	  	  	 <div className="main-container">
-  	   	  	  	 	<Route path='/' exact component={Dashboard} />
-                  	<Route path='/questions/:questionId' component={PollDetail} />
-                 	<Route path='/add' component={NewPoll} />
-                 	<Route path='/leaderboard' component={LeaderBoard} />
-		  	    </div>
-   	  	  	</Fragment>
-
+   	  	  	<Login /> 
+   	  	  	: 
+            <Fragment> 
+                <NavBar/>
+                  <div className="main-container">
+                    <Route path='/' exact component={Dashboard} />
+                    <Route path='/questions/:questionId' component={PollDetail} />
+                   <Route path='/add' component={NewPoll} />
+                   <Route path='/leaderboard' component={LeaderBoard} />
+            </div>
+            </Fragment>
+            
 	   	  	  }
    	 
 
