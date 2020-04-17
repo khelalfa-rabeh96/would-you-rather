@@ -1,8 +1,16 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux'
+
+import { setAuthedUser } from '../actions/authedUser'
+
 const NavBar = (props) => {
-	const { authedUser } = props;
+	const { authedUser, dispatch } = props;
+
+	const handleLogout = () => {
+		dispatch(setAuthedUser(null));
+	}
 	return(
 		<nav className="nav navbar">
 		<div className="navbar-container">
@@ -26,7 +34,7 @@ const NavBar = (props) => {
 			  	</li>
 
 			  	<li  className="nav-list-item">
-			  		<Link to="/login"   className="nav-link">
+			  		<Link to="/"   className="nav-link" onClick={handleLogout}>
 			  		  Logout
 			  		</Link>
 			  	</li>
@@ -44,8 +52,13 @@ const NavBar = (props) => {
 	)
 }
 
+function mapStateToProps({authedUser, users}){
+	return {
+		authedUser: users[authedUser]
+	}
+}
 
 NavBar.propTypes = {
 	authedUser: PropTypes.object.isRequired
 }
-export default NavBar
+export default connect(mapStateToProps)(NavBar)
