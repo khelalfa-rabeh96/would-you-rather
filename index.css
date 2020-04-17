@@ -109,6 +109,41 @@ img{
   color:#666;
 }
 
+/*----- Start Login ------*/
+.login{
+  margin-top:20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.login .login-header{
+  padding: 8px;
+  background-color: #efefef;
+}
+
+.login .login-header p{
+  margin:0;
+}
+
+.login .login-body {
+  padding: 8px;
+}
+
+.login .login-body .react-logo{
+  padding: 8px;
+  text-align: center;
+}
+
+.login label {
+  color: #29aabf;
+  font-size: 20px;
+  font-weight: bold;
+}
+.login button {
+  padding: 8px;
+  background-color: #29aabf;
+  color: #fff;
+}
 /*---- Start NavBar -----*/
 .navbar{
   border-bottom: 2px solid #29aabf;
